@@ -38,6 +38,8 @@ Basic commads
 Create new branch based on `main`
 Format: `users/<username>/<ticket_id>-<name>`
 
+> Sample Use: git_create_branch 95868 add-dynamic-surveys-on-sidebar
+
 Code:
 ```
 git_create_branch() {
