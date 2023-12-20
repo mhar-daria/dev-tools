@@ -34,6 +34,32 @@ Basic commads
   composer -v
 ```
 
+### Bash Commands
+Create new branch based on `main`
+Format: `users/<username>/<ticket_id>-<name>`
+
+Code:
+```
+git_create_branch() {
+        GIT="$(which git)"
+        DEFAULT_BRANCH="users/mdar4993"
+        TICKET_NO=$1
+        BRANCH_NAME=$2
+
+        BRANCH_TO_CREATE="$DEFAULT_BRANCH/$1-$2"
+        #echo "$1 $2"
+
+        $GIT checkout main && $GIT pull
+
+        if [ -n `$GIT rev-parse --verify $CREATE_BRANCH 2>/dev/null` ]
+        then
+                $GIT checkout $BRANCH_TO_CREATE
+        else
+                $GIT checkout -b $BRANCH_TO_CREATE
+        fi
+}
+```
+
 ## Sublime
 ### Settings
 ```
